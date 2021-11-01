@@ -1,0 +1,25 @@
+{
+	"name": "spotcro",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"price": "node ./src/price_usdt.js",
+		"balance": "node ./src/balance.js",
+		"buy": "node ./src/buy_market.js",
+		"sell": "node ./src/sell_market.js",
+		"limit": "node ./src/buy_limit.js",
+		"update_list": "node ./src/json_usdt.js",
+		"trans": "node ./src/transfer.js",
+		"repay": "node ./src/repay.js",
+		"cancel_all": "node ./src/cancel_all_orders.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"crypto-js": "^4.1.1",
+		"dotenv": "^10.0.0"
+	}
+}

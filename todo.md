@@ -1,0 +1,1 @@
+- write and create json price script
