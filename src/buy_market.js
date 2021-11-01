@@ -11,7 +11,7 @@ require('dotenv').config()
 const apiKey = process.env.KEY;
 const apiSecret = process.env.SKEY;
 
-const coin = process.argv[2].toUpperCase()
+const coin = `${process.argv[2].toUpperCase()}USD-PERP`
 const coin_decimals = instruments.filter(a => a.base_currency === coin)[0].quantity_decimals
 const method = "private/create-order"
 const cantidad_a_comprar = parseFloat(process.argv[3])
@@ -23,17 +23,16 @@ async function main() {
 
 	let request = {
 		id: 11,
+		nonce: Date.now(),
 		method: method,
-		api_key: apiKey,
 		params: {
-			instrument_name: `${coin}_USDT`,
+			instrument_name: coin,
 			side: "BUY",
 			type: "LIMIT",
 			price: price_actual,
 			quantity: quantity,
 			client_oid: "my_order_0002",
-		},
-		nonce: Date.now(),
+		}
 	}
 
 
