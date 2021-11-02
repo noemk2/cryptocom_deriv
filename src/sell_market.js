@@ -11,12 +11,12 @@ require('dotenv').config()
 const apiKey = process.env.KEY;
 const apiSecret = process.env.SKEY;
 
-const coin = process.argv[2].toUpperCase()
+const coin = `${process.argv[2].toUpperCase()}USD-PERP`
 const coin_decimals = instruments.filter(a => a.base_currency === coin)[0].quantity_decimals
 const method = "private/create-order"
 const cantidad_a_vender = parseFloat(process.argv[3])
 
-//npm run sell btc 0.00001
+//npm run short btc 10 
 async function main() {
 
 	const price_actual = await f.price_now(coin, "SELL");

@@ -9,9 +9,8 @@
 		"long": "node ./src/buy_market.js",
 		"short": "node ./src/sell_market.js",
 		"limit": "node ./src/buy_limit.js",
+		"slimit": "node ./src/sell_limit.js",
 		"update_list": "node ./src/json_usdt.js",
-		"trans": "node ./src/transfer.js",
-		"repay": "node ./src/repay.js",
 		"cancel_all": "node ./src/cancel_all_orders.js"
 	},
 	"keywords": [],

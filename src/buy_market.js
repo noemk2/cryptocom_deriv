@@ -16,6 +16,7 @@ const coin_decimals = instruments.filter(a => a.base_currency === coin)[0].quant
 const method = "private/create-order"
 const cantidad_a_comprar = parseFloat(process.argv[3])
 
+//npm run long btc 10    
 async function main() {
 
 	const price_actual = await f.price_now(coin, "BUY");
@@ -23,8 +24,8 @@ async function main() {
 
 	let request = {
 		id: 11,
-		nonce: Date.now(),
 		method: method,
+		api_key: apiKey,
 		params: {
 			instrument_name: coin,
 			side: "BUY",
@@ -32,7 +33,8 @@ async function main() {
 			price: price_actual,
 			quantity: quantity,
 			client_oid: "my_order_0002",
-		}
+		},
+		nonce: Date.now(),
 	}
 
 
@@ -45,7 +47,7 @@ async function main() {
 
 	const datos = await axios
 		.post(
-			`https://api.crypto.com/v2/${method}`,
+			`https://deriv-api.crypto.com/v1/${method}`,
 			requestBody,
 			options
 		)

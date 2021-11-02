@@ -11,7 +11,7 @@ require('dotenv').config()
 const apiKey = process.env.KEY;
 const apiSecret = process.env.SKEY;
 
-const coin = process.argv[2].toUpperCase()
+const coin = `${process.argv[2].toUpperCase()}USD-PERP`
 const coin_decimals = instruments.filter(a => a.base_currency === coin)[0].quantity_decimals
 const method = "private/create-order"
 const cantidad_a_comprar = parseFloat(process.argv[3])
@@ -48,7 +48,7 @@ async function main() {
 
 	const datos = await axios
 		.post(
-			`https://api.crypto.com/v2/${method}`,
+			`https://deriv-api.crypto.com/v1/${method}`,
 			requestBody,
 			options
 		)
