@@ -3,7 +3,7 @@ const axios = require("axios");
 async function price_now(moneda) {
 	const datos = await axios
 		.get(
-			`https://deriv-api.crypto.com/v1/public/get-trades?instrument_name=${moneda}`
+			`https://deriv-api.crypto.com/v1/public/get-trades?instrument_name=${moneda}USD-PERP`
 		)
 		.then(
 			(response) => {
